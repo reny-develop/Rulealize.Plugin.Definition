@@ -35,12 +35,22 @@ wrong form is a build error.
 }
 ```
 
-`params` may be omitted, and then the short form applies: an object with an `op` key
-written directly is read as a body with no parameters.
+An entry with no `body` key is the short form: whatever is written there **is** the body,
+and it takes no parameters.
 
 ```jsonc
-"me": { "op": "state.get", "path": "turn" }
+"me": { "op": "state.get", "path": "turn" },   // a node
+"maxPasses": 2                                  // a named constant
 ```
+
+The short form is recognised by the absence of `body` rather than by the presence of `op`,
+because a body is an expression and an expression need not be a node. Naming a constant is
+worth having: a number that appears both in a transition rule and in the state schema is
+better written once.
+
+Only the long form takes `params`, and an entry with `params` but no `body` is a build
+error — parameters need a body to be in scope over. The cost of the rule is that a record
+literal with a `body` field cannot be a short-form body; wrap it in the long form.
 
 ## Definitions are hygienic
 
