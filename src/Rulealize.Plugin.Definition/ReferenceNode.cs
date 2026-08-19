@@ -18,7 +18,7 @@ namespace Rulealize.Plugin.Definition
     /// <para>
     /// The body is evaluated on every reference. Because bodies are pure, the runtime is
     /// free to memoise the result for a given snapshot and set of arguments, and it matters
-    /// here: Othello's flip computation is reached from a guard and from the effect that
+    /// here: Reversi's flip computation is reached from a guard and from the effect that
     /// follows it, with the same argument, for each of sixty-four candidate moves.
     /// </para>
     /// </remarks>

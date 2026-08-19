@@ -35,7 +35,7 @@ Core structure, but inseparable from this plugin's meaning, so it is written dow
 ```jsonc
 "definitions": {
   "<name>": {
-    "params": ["<name>", ...],   // optional, static
+    "params": ["<name>", …],     // optional, static
     "body": <expression>
   }
 }
@@ -62,8 +62,8 @@ entry with `params` and no `body` is a static error, since there is no body for 
 parameters to be visible in.
 
 Because the short form allows a body that is not an object, **a record literal with a key
-called `body` cannot be a body**. Wrap it in the long form. Nothing in the five rule sets
-runs into this.
+called `body` cannot be a body**. Wrap it in the long form. Nothing in the rule sets written
+so far runs into this.
 
 ## The heart of it — definitions are hygienic
 
@@ -169,7 +169,7 @@ Applies a definition that takes arguments.
 {
   "op": "def.call",
   "def": "<name>",                       // static
-  "args": { "<parameter>": <expression>, ... }
+  "args": { "<parameter>": <expression>, … }
 }
 ```
 
@@ -233,5 +233,5 @@ are evaluated in the caller's scope before they reach `flips1`.
 - **No importing definitions between rule sets.** The case for it is variants sharing a
   base — Reversi and its cousins, or a chess variant. It needs a dependency declaration of
   its own, roughly what `requires` is for plugins, and nothing here has two rule sets that
-  overlap: the five in [`ruleset/`](https://github.com/reny-develop/Rulealize/tree/main/ruleset/) are five separate games and processes.
+  overlap: those in [`ruleset/`](https://github.com/reny-develop/Rulealize/tree/main/ruleset/) are separate games and processes.
   Worth building when a family of variants actually exists, and not before.

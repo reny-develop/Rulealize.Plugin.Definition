@@ -15,7 +15,7 @@ namespace Rulealize.Plugin.Definition
     /// <para>
     /// Arguments are evaluated in the caller's scope and passed by value; the body then
     /// runs in a fresh frame holding only them. It cannot see the caller's locals. That is
-    /// what keeps a definition's meaning fixed wherever it is used — Othello's
+    /// what keeps a definition's meaning fixed wherever it is used — Reversi's
     /// single-direction flip helper takes its direction as a parameter and is unaffected by
     /// the fact that its caller's loop variable happens to be named the same thing.
     /// </para>
