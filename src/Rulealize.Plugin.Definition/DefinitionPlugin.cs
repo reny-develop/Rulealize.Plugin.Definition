@@ -25,7 +25,7 @@ namespace Rulealize.Plugin.Definition
     {
         /// <inheritdoc />
         public PluginManifest Manifest { get; } =
-            new("Rulealize.Plugin.Definition", new Version(1, 0, 0), "def", '#');
+            new("Rulealize.Plugin.Definition", new Version(1, 0, 1), "def", '#');
 
         /// <inheritdoc />
         public void Register(IPluginRegistry registry)
